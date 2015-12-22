@@ -1,0 +1,26 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                             controllers.CoursesCont.index()
+GET     /courses                      controllers.CoursesCont.listCourses()
+POST    /courses                      controllers.CoursesCont.newCourse()
+POST    /courses/:id/delete           controllers.CoursesCont.deleteCourse(id:Long)
+
+GET     /person                      controllers.PersonCont.listPerson()
+POST    /person                      controllers.PersonCont.newPerson()
+POST    /person/:id/delete           controllers.PersonCont.deletePerson(id:Long)
+
+
+GET     /maintaincourse/:id          controllers.MaintainCourse.findCourse(id:Long)
+# POST    /maintaincourse              controllers.MaintainCourse.newCourseExecution(courseId:Long, courseExecution:CourseExecution)
+
+#testing jQuery functionality
+GET   /user-name-ajax/:id            controllers.PersonCont.user(id:Long)
+
+
+
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)
